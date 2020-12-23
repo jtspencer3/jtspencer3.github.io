@@ -28,10 +28,9 @@
 }
 
 #rowWrapper {
-    width: 53.1%;
+    width: 30%;
     margin: 18px;
     height: 433px;
-    
 }
 
 #left {
@@ -55,7 +54,6 @@
 #top {
     width: 95%;
     height: 198px;
-    padding: 25px;
     border: 7px solid white;
     border-radius: 25px;
     margin: auto;
@@ -65,7 +63,6 @@
 #bottom {
     width: 95%;
     height: 132px;
-    padding: 25px;
     border: 7px solid white;
     border-radius: 25px;   
     margin: auto;
