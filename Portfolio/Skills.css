@@ -1,9 +1,16 @@
 #skills {
+    position: relative;
     text-align: center;
     font-size: 36px;
     font-family: 'Roboto', sans-serif;
+    margin: 65px auto 0 auto;
 }
 
+#skills::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 .column {
     float: left;
@@ -16,7 +23,7 @@
     border: 6px solid white;
     border-radius: 50px;
     padding: 8px;
-    margin: 100px auto;
+    margin: auto;
     background-color: #368ce7;
     display: flex;
 }
@@ -76,16 +83,6 @@ body {
 #skills, h4 {
     color: white;
     font-family: 'Roboto', sans-serif;
-}
-
-#skills {
-    float: left;
-}
-
-#skills::after {
-    content: "";
-    clear: both;
-    display: table
 }
 
 .headr {
