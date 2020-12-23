@@ -28,7 +28,7 @@
 }
 
 #rowWrapper {
-    width: 449px;
+    width: 53.1%;
     margin: 18px;
     height: 433px;
     
@@ -53,20 +53,22 @@
 }
 
 #top {
-    width: 44.3%;
+    width: 95%;
     height: 198px;
     padding: 25px;
     border: 7px solid white;
     border-radius: 25px;
+    margin: auto;
     margin-bottom: 25px;
 }
 
 #bottom {
-    width: 44.3;
+    width: 95%;
     height: 132px;
     padding: 25px;
     border: 7px solid white;
     border-radius: 25px;   
+    margin: auto;
 }
 
 body {
