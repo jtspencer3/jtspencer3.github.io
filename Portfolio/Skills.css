@@ -79,6 +79,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+#skills {
+    float: left;
+}
+
+#skills::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .headr {
     font-size: 24px;
     text-align: center;
