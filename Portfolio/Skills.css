@@ -86,7 +86,7 @@ body {
 #skills::after {
     content: "";
     clear: both;
-    display: table;
+    display: table
 }
 
 .headr {
