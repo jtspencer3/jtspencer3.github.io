@@ -11,12 +11,14 @@
 }
 
 #columnsWrapper {
-    width: 1128px;
+    /* width: 1128px; */
+    width: 75%;
     border: 6px solid white;
     border-radius: 50px;
     padding: 8px;
     margin: 100px auto;
     background-color: #368ce7;
+    display: flex;
 }
 
 .clear::after {
@@ -38,7 +40,7 @@
     height: 433px;
     border: 7px solid white;
     border-radius: 25px;
-    width: 247px;
+    width: 29.2%;
 }
 
 #right {
@@ -47,11 +49,11 @@
     height: 433px;
     border: 7px solid white;
     border-radius: 25px;
-    width: 224px;
+    width: 26.4%;
 }
 
 #top {
-    width: 375px;
+    width: 44.3%;
     height: 198px;
     padding: 25px;
     border: 7px solid white;
@@ -60,7 +62,7 @@
 }
 
 #bottom {
-    width: 375px;
+    width: 44.3;
     height: 132px;
     padding: 25px;
     border: 7px solid white;
@@ -75,14 +77,6 @@ body {
 #skills, h4 {
     color: white;
     font-family: 'Roboto', sans-serif;
-}
-
-.center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%)
 }
 
 .headr {
