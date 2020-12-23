@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Name: Joel Spencer
+     Pawprint: jtswgb
+     Date: 09/11/2020
+     Challenge: Multi-Column Layout F20
+-->
+
+<html lang="en">
+    <head>
+        <title>Skills</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Skills.css" type="text/css">
+        <link rel="stylesheet" href="navBar.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="responsiveNav.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="topnav" id="myTopnav">
+                        <a href="/index.html">Joel Spencer</a>
+                        <a href="Skills.html" class="active">Skills</a>
+                        <a href="Tables.html">Courses</a>
+                        <a href="Projects.html">Projects</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class=" fa fa-bars"></i>
+                    </a>
+        </div>
+        <!-- Main wrapper. This div should wrap all columns, row wrapper, and title header -->
+        <div id="columnsWrapper" class="clear center">
+            <h3 id="skills">Skills</h3>
+            <!-- Left Column -->
+            <!-- Put left column physical width calculations here: 
+                padding -> 36px(18 left, 18 right)
+                margin -> 36px(18 left, 18 right)
+                border -> 14px(7 left, 7 right)
+                width -> 247px
+                =
+                        333px
+
+            -->
+            <div id="left" class="column">
+                <h4 class="headr">Languages</h4>
+                    <ul class="list">
+                        <li>C#</li>
+                        <li>Python</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+            </div>
+            
+            <!-- Row Wrapper. This div will contain two rows -->
+            <!--Put middle column physical width calculations here:
+                    width -> 375px
+                    padding -> 50px (25 left, 25 right)
+                    border -> 14px (7 left, 7 right)
+                    =
+                    middle column physical width -> 439px
+
+                    rowWrapper content width -> 449 px
+                    rowWrapper margin -> 36 px (18 left, 18 right)
+                    =
+                    rowWrapper physical width -> 485px            -->
+            
+            <div id="rowWrapper" class="column">
+                <div id="top" class="column middle">
+                    <h4 class="headr">Coursework</h4>
+                    <ul class="list">
+                        <li>IT2040 Programming Languages and Paradigms</li>
+                        <li>CS1050 Algorithm Design/Programming</li>
+                        <li>IT1610 Introduction to Digital Media Design</li>
+                    </ul>
+                </div>
+                <div id="bottom" class="column middle">
+                    <h4 class="headr">Other</h4>
+                    <ul class="list">
+                        <li>Hardworking</li>
+                        <li>Motivated</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Right Column -->
+            <!--Put right column physical width calculations here: 
+                wrapperDiv content width -> 1128px
+                rowWrapper div(middle div) -> 485px
+                leftColumn physical width -> 333px
+                rightColumn padding -> 36px ( 18 left, 18 right)
+                rightColumn margin -> 36px (18 left, 18 right)
+                rightColumn border -> 14px ( 7 left, 7 right)
+
+                1128
+                -485
+                =
+                643
+                -333
+                =
+                310
+                -36
+                =
+                274
+                -36
+                =
+                238
+                -14
+               =
+                right content width -> 224px
+
+            -->
+            <div id="right" class="column">
+                <h4 class="headr">Technologies</h4>
+                    <ul class="list">
+                        <li>Git/Github</li>
+                        <li>Microsoft Office</li>
+                    </ul>
+            </div>
+        </div>
+        <h4 id="updateMsg">Last Updated on: Oct 26, 2020</h4>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Name: Joel Spencer
+     Pawprint: jtswgb
+     Date: 09/19/2020
+     Challenge: Tables F20
+-->
+
+<html lang="en">
+    <head>
+        <title>Courses</title>
+        <meta charset="utf-8">
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+        
+        <link rel="stylesheet" href="Tables.css" type="text/css">
+        <link rel="stylesheet" href="navBar.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="responsiveNav.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        
+<!--         Bootstrap CSS -->
+        <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="topnav" id="myTopnav">
+                        <a href="/index.html">Joel Spencer</a>
+                        <a href="Skills.html">Skills</a>
+                        <a href="Tables.html" class="active">Courses</a>
+                        <a href="Projects.html">Projects</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class=" fa fa-bars"></i>
+                    </a>
+        </div>
+        <div class="Entirewrapper" id="wapper">
+            <div class="tableWrapper">
+            <table id="classes" class="table table-dark table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th class="headers" colspan="7">Classes Taken</th>
+                    </tr>
+                    <tr>
+                        <th class="headers" colspan="7">
+                            <span class="schoolname">
+                                University of Missouri-Columbia
+                            </span>
+                            <span class="headerImg">
+                                
+                                <img id="tiger" src="images/mu-tiger.png" alt="Mizzou">                          
+                            </span>
+                            
+                            
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="info">Department</th>
+                        <th class="info">Course</th>
+                        <th class="info">Description</th>
+                        <th class="info">Term</th>
+                        <th class="info">Grade</th>
+                        <th class="info">Units</th>
+                        <th class="info">Projects</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="IT" rowspan="5">Information Technology</td>
+                        <td>Python 1</td>
+                        <td>An introduction to the Python 3 programming langauge</td>
+                        <td>Fall 2020</td>
+                        <td>A</td>
+                        <td>3.00</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td>Web Application Development 1</td>
+                        <td>An introduction into the fundamentals of web development</td>
+                        <td>Fall 2020</td>
+                        <td>A-</td>
+                        <td>3.00</td>
+                        <td>This website</td>
+                    </tr>
+                    <tr>
+                        <td>Fundamentals of Network Technology</td>
+                        <td>An introduction into the fundamentals of Networks</td>
+                        <td>Fall 2020</td>
+                        <td>A-</td>
+                        <td>3.00</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td>Programming Languanges and Paradigms</td>
+                        <td>A look at multiple languages primarily C#, discussing multiple programming paradigms including object-oriented programming</td>
+                        <td>Spring 2020</td>
+                        <td>A+</td>
+                        <td>3.00</td>
+                        <td>Music Playlist Analyzer</td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Digital Media Design</td>
+                        <td>An introduction into the fundamentals of digital media design practices</td>
+                        <td>Spring 2020</td>
+                        <td>A</td>
+                        <td>3.00</td>
+                        <td>Joplin Movie Trailer</td>
+                    </tr>
+                    <tr>
+                        <td id="math">Math</td>
+                        <td>Analytic Geometry and Calculus I</td>
+                        <td>Elementary analytic geometry, functions, limits, continuity, derivatives, antiderivatives, definite integrals</td>
+                        <td>Fall 2019</td>
+                        <td>B</td>
+                        <td>5.00</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td class="compSci" rowspan="2">Computer Science</td>
+                        <td>Algorith Design and Programming</td>
+                        <td>An introduction to C programming langauge and the fundamentals programming</td>
+                        <td>Fall 2019</td>
+                        <td>B-</td>
+                        <td>4.00</td>
+                        <td>Dungeons and Dragons game</td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Computer Science</td>
+                        <td>An introduction to computer science and career oppurtunites related to the field</td>
+                        <td>Fall 2019</td>
+                        <td>A</td>
+                        <td>1.00</td>
+                        <td>NA</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            </div>
+            <div id="cssCard" class="wrapper">
+                <div class="left">
+                    <img id="cardPic" src="images/Me3.JPG" alt="Joel Spencer">
+                </div>
+                <div class="center">
+                    <h5 class="cardHeader">Joel Spencer</h5>
+                        <hr>
+                        Information Technology 
+                        <br>
+                        Junior
+                        <br>
+                        Total Credits | 63 h.
+                </div>
+                <div class="right">
+                    <h5 class="cardHeader">Contact:</h5>
+                    <hr>
+                    email: jtspencer3@gmail.com
+                    <br>
+                    phone: 816-308-7103
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

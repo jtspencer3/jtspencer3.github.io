@@ -1,0 +1,107 @@
+body {
+    margin: 50px 0 0 0;
+    background-color: dodgerblue;
+}
+
+#wapper {
+    margin: 63px 0 0 0;
+}
+table, th, td {
+    border: 2px solid black; 
+}
+
+.table {  
+    margin: auto;
+}
+
+.headers {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.info {
+    font-family: 'Roboto', sans-serif;
+}
+
+#math {
+    background-color: #368ce7;
+}
+
+.compSci {
+    background-color: #1666ba;
+}
+
+.IT {
+    background-color: dodgerblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+#tiger {
+    width: 50px;
+    margin-left: 50px;
+}
+
+#cssCard {
+    width: 50%;
+    border: 2px solid white;
+    font-size: 1.5vw;
+    box-shadow: 5px 10px 8px #F5F5F5;
+    color: white; 
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.left, .center {
+    width: 30%;
+    display: inline-block;
+    float: left;
+}
+
+.right, .center {
+    text-align: center;
+}
+.right {
+    width: 40%;
+    display: inline-block;
+    float: left;
+}
+
+.wrapper::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.left #cardPic {
+    width: 90%;
+}
+.wrapper {
+    margin: auto;
+}
+
+.Entirewrapper {
+    background-color: dodgerblue;
+    margin: 50px auto;
+    padding-bottom: 50px;
+}
+
+.tableWrapper {
+    margin: auto;
+}
+
+#classes tr td {
+    font-family: 'Roboto', sans-serif;
+}
+
+.schoolname {
+    text-align: left;
+}
+
+.headerImg {
+    text-align: right;   
+}
+
+.cardHeader {
+    font-size: 2vw;
+    padding: 5px 0 0 0;
+}

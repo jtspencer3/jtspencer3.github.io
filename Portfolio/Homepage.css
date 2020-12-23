@@ -1,0 +1,88 @@
+body {
+    background-color: dodgerblue;
+    margin: 0;
+}
+
+#me {
+    display: block;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 5px solid white;
+    width: 23vw;
+    z-index: 1;
+}
+
+h3 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 4vw;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: center;    
+}
+
+.para {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vw;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#linklist {
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+
+}
+
+.links {
+    background-color: transparent;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vw;
+    padding: 0 25px;
+    text-align: center;
+    position: relative;    
+}
+
+#resume:link {
+    text-decoration: none;
+}
+
+#resume:hover, .links:active {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 4vw;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}

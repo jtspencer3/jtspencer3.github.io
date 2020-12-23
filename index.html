@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<!--
+    Name: Joel Spencer
+    Pawprint: jtswgb
+    Date: 10/26/2020
+    Challenge: Web Servers F20
+--> 
+
+ <html lang="en">
+    <head>
+        <title>Joel Spencer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="Portfolio/Homepage.css">
+        <link rel="stylesheet" type="text/css" href="Portfolio/navBar.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script src="Portfolio/responsiveNav.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+        <body>
+            <div class="topnav" id="myTopnav">
+                        <a href="index.html" class="active">Joel Spencer</a>
+                        <a href="Portfolio/Skills.html">Skills</a>
+                        <a href="Portfolio/Tables.html">Courses</a>
+                        <a href="Portfolio/Projects.html">Projects</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class=" fa fa-bars"></i>
+                    </a>
+            </div>
+                <div class="center">
+                    <img id="me" src="Portfolio/images/Me.JPG" alt="Joel Spencer">
+                    <h3>Joel Spencer</h3>
+                    <p class="para">Information Technology | University of Missouri</p>
+
+                    <div class="links">
+                            <a id="resume" class="links" href="Portfolio/JoelSpencerResume.pdf" download>Resume</a>
+                            <a class="links" href="https://github.com/jtspencer3" target="_blank"><img class="logo" src="Portfolio/images/GithubLogo.png" alt="Github"></a>
+                            <a class="links" href="https://www.linkedin.com/in/joel-spencer-a56025176/" target="_blank"><img class="logo" src="Portfolio/images/LinkedInLogo.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+        </body>
+</html>

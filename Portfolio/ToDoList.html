@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>To-Do List</title>
+        <meta charset="utf-8">
+        <style>
+            a {
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: black;
+                font-size: 22px;
+            }
+            
+            
+            body {
+                text-align: center;
+                background-color: white;
+                color: black;
+                border-color: white;
+            }
+            
+            .darkMode {
+                background-color: #404040;
+                color: white;
+            }
+            
+            a.whiteLink {
+                color: white;
+            }
+            
+            #listContainer{
+                height: 500px;
+                width: auto;
+                overflow-y: scroll;
+            }
+            
+            #listContainer::after{
+                content: "";
+                clear: both;
+                display: table;
+            }
+            
+            #formContainer{
+                height: 30%;
+                margin: 50px auto;
+                border: 2px solid black;
+                padding: 15px;
+                width: 50%;
+            }
+            
+            #formContainer.whiteBorder {
+                border: 2px solid white;
+            }
+            
+            table, th, td {
+                border: 2px solid dodgerblue;
+                border-collapse: collapse;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            table {
+                width: 80%;
+                margin: auto;
+            }
+            
+            h2 {
+                text-align: center;
+            }
+            
+            form {
+                display: inline-block;
+                margin: auto;
+                width: 100%
+            }
+            
+            #priority {
+                width: 100px;
+                display: inline-block;
+            }
+            
+            #priorityLevel {
+                display: inline-block;
+            }
+            
+            #errorMsg {
+                color: red;
+            }
+            
+            #clearForm, #deleteForms {
+                margin: 5px 2.5px;
+            }
+            
+        </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script>
+            
+//             Resource: https://www.tutorialrepublic.com/faq/how-to-add-remove-table-rows-dynamically-using-jquery.php
+            
+            $(document).ready(function(){
+                $("#errorMsg").hide();
+                $("#addForms").click(function(){
+ 
+                    var title = $("#title").val();
+                    var type = $("#selectType").val();
+                    var priority = $("#priority").val();
+                    var date = $("#dueDate").val();
+                    if(title==""||type==""||date==""){
+                        $("#errorMsg").show();
+                    }
+                    else{
+                        $("#errorMsg").hide();
+                        var row = "<tr> <td>" + title + "</td><td>" + type + "</td><td>" + priority + "</td><td>" + date + "</td><td><input type='checkbox' name='record'></td></tr>";
+                        $("table tbody").append(row);
+                        console.log(title);
+                        $("#title").val("");
+                        $("#selectType").val(""); 
+                        $("#priority").val("3"); 
+                        $("#dueDate").val("");
+                    }
+                });
+                
+                $("#header").dblclick(function(){
+                    var newHeader = window.prompt("Enter new header name: ");
+                    console.log(newHeader);
+                    var isValid = false;
+                    while(isValid==false){
+                        if(newHeader === ""){
+                            newHeader = window.prompt("Invalid Name. Enter new header name: ");
+                            continue;
+                        }
+                        else {
+                            isValid = true;
+                        }
+                    }
+                    
+                    $("#header").html(newHeader);   
+                });
+                
+                $("#toggle").click(function(){
+                    $("body").toggleClass("darkMode");
+                    $("#link").toggleClass("whiteLink");
+                    $("#formContainer").toggleClass("whiteBorder");
+                });
+                
+                $("#clearForm").click(function(){
+                    document.getElementById("todoForm").reset();
+                    
+                });
+                
+                $("#deleteForms").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                    }
+                });
+            }); 
+            });
+        </script>
+        <script>
+            function showPriority(){
+                var value = document.getElementById("priority").value;
+                $("#priorityLevel").html(value);
+            }
+        </script>
+    </head>
+    <body>
+<!--        <div id="wrapper">-->
+            <a id="link" href="Projects.html">Back to projects</a>
+        <h2 id="header">To-Do List</h2>
+        <div id="listContainer">
+            <table id="listTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Priority</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            </div>
+            <p id="errorMsg">Error: Missing required fields</p>
+        <div id="formContainer">
+            <form id="todoForm">
+                <label for="title">Title:</label>
+                <input type="text" id="title">
+                <label for="selectType">Type: </label>
+                <select name="type" id="selectType">
+                    <option value="none" selected disabled hidden>Select Type</option>
+                    <option value="School">School</option>
+                    <option value="Housework">House Work</option>
+                    <option value="Personal Project">Personal Project</option>
+                </select>
+                <br>
+                <label for="priority">Priority:</label>
+                <input type="range" id="priority" name="priority" min="0" max="5" value="3" onchange="showPriority()"><p id=priorityLevel>3</p><br>
+                <label for="dueDate">Complete By:</label>
+                <input type="date" id="dueDate" name="dueDate">
+                <input type="button" id="addForms" name="addForms" value="Add To List"><br>
+                <input type="button" id="clearForm" name="clearForm" value="Clear Form">
+                <input type="button" id="deleteForms" name="deleteForms" value="Delete List Item(s)">
+            </form>
+        </div>
+        <button id="toggle" type="button">Toggle light/dark mode</button>
+<!--        </div>-->
+    </body>
+</html>

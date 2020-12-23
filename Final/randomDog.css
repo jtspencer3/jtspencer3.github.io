@@ -1,0 +1,58 @@
+body {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+#wrapper {
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+    margin: 75px auto;
+}
+
+#pictureWrapper {
+    height: 500px;
+    width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+button {
+    position: relative;
+    margin: 25px auto;
+    min-width: 50px;
+    font-size: .7em;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.overflow {
+    height: 75px;
+}
+
+hr {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#loader {
+    position: absolute;
+    right: 40%;
+    top: 35%;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+    z-index: 100;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

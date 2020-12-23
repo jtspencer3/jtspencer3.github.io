@@ -1,0 +1,75 @@
+body {
+    background-color: dodgerblue;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 90% auto;
+    position: relative;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+div .card {
+    width: 400px;
+    border: 3px solid white;
+    border-radius: 10px;
+    height: 250px;
+    background-color: #368ce7;
+    margin: 5% auto;
+    position: relative;
+    display: flex;
+
+    
+    -moz-box-shadow: 0 0 75px #555;
+    -o-box-shadow: 0 0 75px #555;
+    -ms-box-shadow: 0 0 75px #555;
+    -webkit-box-shadow: 0 0 75px #555; 
+    box-shadow: 0 0 75px black;
+    overflow: hidden;
+}
+
+.cardPic {
+    height: 100%;
+    width: 60%;
+
+}
+
+.textColumn {
+    text-align: justify;
+    width: 40%;
+    display: inline-block;
+
+}
+
+.text {
+    color: white;
+    display: table;
+    margin: 0 auto;
+}
+
+.title {
+    
+    padding: 10px 0 25px 0;
+    margin: 10px auto;
+    font-size: 21px;
+    color: #F8F8FF;
+}
+
+p {
+    width: 90%;
+    text-align: justify;
+    justify-content: center;
+    font-size: 18px;
+}
+
+a.link {
+    padding: 20px;
+    display: block;
+    text-decoration: underline;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;   
+}
+

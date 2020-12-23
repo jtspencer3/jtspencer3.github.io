@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+    name: Joel Spencer
+    pawprint: jtswgb
+    date: 11/13/20
+    challenge: AJAX Fall 2020
+-->
+<html lang="en">
+    <head>
+        <title>Joel's Mars Explorer</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="icon" href="images/marsicon.png" type="image/x-icon">
+        <!-- icon source: https://www.hiclipart.com/free-transparent-background-png-clipart-dvpig -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+            var apiKey = "N3h0oszG6xgj3ZFS6HYIhQWlkaOQb5dUtxuxpFPb";
+            
+            $(document).ready(function(){
+                $(".next").on('click', function(){
+                    var currentImg = $('.active');
+                    var nextImg = currentImg.next();
+                    
+                    if(nextImg.length){
+                        currentImg.removeClass('active').css('z-index', -10);
+                        nextImg.addClass('active').css('z-indez', 10);
+                    }
+                });
+                
+                $(".prev").on('click', function(){
+                    var currentImg = $('.active');
+                    var prevImg = currentImg.prev();
+                    
+                    if(prevImg.length){
+                        currentImg.removeClass('active').css('z-index', -10);
+                        prevImg.addClass('active').css('z-indez', 10);
+                    }
+                });
+            });
+            
+            
+            var manifestData = []
+            function getManifest(){
+                $.getJSON("https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=N3h0oszG6xgj3ZFS6HYIhQWlkaOQb5dUtxuxpFPb",
+                    function(data){
+                        manifestData = (data.photo_manifest.photos);
+                });
+                $(".arrow").hide();
+                $("#loader").hide();
+                $("#loader2").hide();
+            }
+            
+            function clearSol(){
+                document.getElementById("solNum").value = "";
+                $("#camera").empty();
+            }
+                
+                var hasCameras = false;
+            function getCameras(){
+                hasCameras = false;
+                for(var i = 0; i < manifestData.length; i++){
+                    if(manifestData[i].sol == ($("#solNum").val())){    
+                        $("#camera").empty();
+                        hasCameras = true;
+                        for(var j = 0; j < manifestData[i].cameras.length; j++) {
+                            $("#camera").append('<option value="' + manifestData[i].cameras[j] + '">' + manifestData[i].cameras[j] + '</option>');
+                        }
+                    }
+                }
+                
+                if(hasCameras == false){
+                    alert("No pictures available for sol " + document.getElementById("solNum").value, 
+                          function(){
+                            $("#camera").empty();
+                            $(".arrow").hide();
+                            $('.slider-inner').empty();
+                        });
+                }
+            }
+            
+            function getPictures(){
+                if(hasCameras == false){
+                    $("#camera").empty();
+                    $(".arrow").hide();
+                    $(".slider-inner").empty();
+                    $(".slider-inner").append('<p class="welcome">Welcome to the Mars explorer! Choose a Martian sol and camera to display images.</p>');
+                }
+                else{
+                    $("#loader").show();
+                    $('.slider-inner').empty();
+                    var solValue = document.getElementById("solNum").value;
+                    var cameraValue = document.getElementById("camera").value;
+                    var url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" + solValue + "&camera=" + cameraValue + "&api_key=" + apiKey;
+                    console.log(cameraValue);
+                    console.log(url);
+                    $.getJSON(url, function(data){
+                        var photos = data.photos;
+                        for(var i = 0; i < photos.length; i++){
+                            imgSrc = photos[i].img_src;
+                            imgId = "Picture " + photos[i].id;
+                            j = i + 1;
+                            if(i == 0){
+                                var image = '<img class="active" src="' + imgSrc + '">';
+
+                                $(".slider-inner").append(image);
+                            }
+                            else {
+                                var image = '<img src="' + imgSrc + '">';
+
+                                $(".slider-inner").append(image);
+                            }
+                        }
+                        $("#loader").hide();
+                        $(".arrow").show();
+                    }); 
+                }
+            }
+            
+            var myVar;
+
+            function myFunction() {
+              myVar = setTimeout(showPage, 3000);
+            }
+
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("loader2").style.display = "none";
+                document.getElementById("myDiv").style.display = "block";
+            }
+            
+            function getPics() {
+                getCameras();
+                getPictures();
+            }
+            
+            function getRovers() {
+                var xmlHttp = new XMLHttpRequest();
+                
+                xmlHttp.onload = function() {
+                    if (xmlHttp.status == 200) {
+                        
+                        var xmlDoc = xmlHttp.responseXML;
+                
+                        var roverName = xmlDoc.getElementsByTagName("name");
+
+                        for(var i = 0; i < roverName.length; i++) {
+                            $("#Rovers").append('<option value="' + roverName[i].childNodes[0].nodeValue + '">' + roverName[i].childNodes[0].nodeValue + '</option>');
+                        }
+                    }
+                }
+                
+                xmlHttp.open("GET", "https://www.professorwergeles.com/webService.php?content=data&format=xml", true);
+                xmlHttp.send();
+                
+            }
+            
+            function getRoverInfo() {
+                
+                $("#loader2").show();
+                var xmlHttp = new XMLHttpRequest();
+                
+                xmlHttp.onload = function() {
+                    if (xmlHttp.status == 200) {
+                        
+                        var xmlDoc = xmlHttp.responseXML;
+                
+                        var roverName = xmlDoc.getElementsByTagName("name");
+                        var launchDate = xmlDoc.getElementsByTagName("launch_date");
+                        var description = xmlDoc.getElementsByTagName("description");
+
+                        var choice = document.getElementById("Rovers").value;
+                        for(var i = 0; i < roverName.length; i++) {
+                            if(roverName[i].childNodes[0].nodeValue == choice) {
+                                console.log('success');
+                                $("#infoDate").empty();
+                                $("#infoName").empty();
+                                $("#infoDescription").empty();
+                                $("#infoName").append(roverName[i].childNodes[0].nodeValue);
+                                $("#infoDate").append(launchDate[i].childNodes[0].nodeValue);
+                                $("#infoDescription").append(description[i].childNodes[0].nodeValue);
+                            }
+                        }
+                        $("#loader2").hide();
+                    }
+                }
+                
+                xmlHttp.open("GET", "https://www.professorwergeles.com/webService.php?content=data&format=xml", true);
+                xmlHttp.send();
+                
+            }
+            
+            function loadFunctions(){
+                getManifest();
+                getRovers();
+            }
+            
+            $(document).on("keydown", "form", function(event){
+                return event.key != "Enter";
+            });
+        </script>
+    </head>
+    <body onload="loadFunctions()">
+        <h1 class="title">Mars Explorer</h1>
+        <div id="wrapper">
+            <div id=selectDiv>
+                <form id="selections">
+                    <label id="solLabel" for="solNum">Martian Sol: </label><br>
+                    <input type="number" id="solNum" class="input" name="solNum" min="1" required onchange="getPics()"><br>
+                    <label for="camera">Camera: </label><br>
+                    <select name="camera" onchange="getPictures()" class="input" id="camera"></select><br>
+                    <label for="Rovers">Rovers: </label><br>
+                    <select name="Rovers" onchange="getRoverInfo()" class="input" id="Rovers">
+                        <option value= "" selected disabled hidden>Choose a rover</option>
+                    </select>
+                </form>
+            </div>
+         
+            <div id="photoWrapper">
+                <div id="loader"></div> <!-- Loader resource: w3 schools -->
+                <!-- Slider resource: https://www.youtube.com/watch?v=KkzVFB3Ba_o&t=138s&ab_channel=LearnCode.academy -->
+                <div class="slider-outer">
+                    <img src="images/arrow-left.png" class="prev arrow" alt="Prev">
+                    <div class="slider-inner">
+                        <p class="welcome">Welcome to the Mars explorer! Choose a Martian sol and camera to display images.</p>
+                    </div>
+                    <img src="images/arrow-right.png" class="next arrow" alt="Next">
+                </div>
+            </div> 
+            <div id="infoWrapper">
+                <h2 id="infoName" class="inf"></h2>
+                <h4 id="infoDate" class="inf"></h4>
+                <p id="infoDescription" class="inf"></p>
+                <div id="loader2"></div>
+            </div>
+        </div>
+        <a id="projectsLink" href="/Portfolio/Projects.html">Back to projects</a>
+    </body>
+</html>
