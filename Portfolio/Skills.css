@@ -84,7 +84,8 @@
 
 #bottom {
     width: 95%;
-    height: 132px;
+    min-height: 132px;
+    height: auto;
     border: 7px solid white;
     border-radius: 25px;   
     margin: auto;
@@ -93,6 +94,7 @@
 body {
     background-color: dodgerblue;
     margin-top: 50px;
+    height: 60vh;
 }
 
 #skills, h4 {
@@ -101,7 +103,7 @@ body {
 }
 
 .headr {
-    font-size: 24px;
+    font-size: 1.6vw;
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
@@ -109,10 +111,12 @@ body {
 .list {
     margin: 20px auto;
     font-family: 'Roboto', sans-serif;
+    font-size: 1.5vw;
 }
 
 #updateMsg {
-    position: relative;
-    margin: 50px auto;
-    font-size: 1.4vw;
+    position: absolute;
+    font-size: 1.3vw;
+    right: 0;
+    bottom: 5;
 }
