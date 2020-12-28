@@ -27,6 +27,7 @@
     margin: auto;
     background-color: #368ce7;
     display: flex;
+    overflow: none;
 }
 
 .clear::after {
