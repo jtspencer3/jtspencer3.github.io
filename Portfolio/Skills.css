@@ -15,6 +15,7 @@
 .column {
     float: left;
     color: white;
+    text-align: center;
 }
 
 #columnsWrapper {
@@ -35,12 +36,16 @@
 }
 
 #rowWrapper {
-    width: 30%;
+    width: 28%;
     margin: 18px;
     height: 433px;
+    position: relative;
+    float: left;
 }
 
 #left {
+    position: relative;
+    float: left;
     padding: 18px;
     margin: 18px;
     height: 433px;
@@ -50,6 +55,8 @@
 }
 
 #right {
+    position: relative;
+    float: left;
     padding: 18px;
     margin: 18px;
     height: 433px;
@@ -65,6 +72,12 @@
     border-radius: 25px;
     margin: auto;
     margin-bottom: 25px;
+}
+
+#left::after, #right::after, #rowWrapper::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 #bottom {
@@ -92,12 +105,12 @@ body {
 }
 
 .list {
-    margin: 20px;
+    margin: 20px auto;
     font-family: 'Roboto', sans-serif;
 }
 
 #updateMsg {
     position: relative;
     margin: 50px auto;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
 }
