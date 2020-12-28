@@ -25,7 +25,6 @@
     padding: 8px;
     margin: auto;
     background-color: #368ce7;
-    display: flex;
 }
 
 .clear::after {
@@ -46,7 +45,7 @@
     height: 433px;
     border: 7px solid white;
     border-radius: 25px;
-    width: 29.2%;
+    width: 28%;
 }
 
 #right {
@@ -55,7 +54,7 @@
     height: 433px;
     border: 7px solid white;
     border-radius: 25px;
-    width: 26.4%;
+    width: 28%;
 }
 
 #top {
