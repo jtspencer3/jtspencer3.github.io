@@ -19,15 +19,14 @@
 }
 
 #columnsWrapper {
-    /* width: 1128px; */
     width: 75%;
     border: 6px solid white;
     border-radius: 50px;
-    /* padding: 8px; */
     margin: auto;
     background-color: #368ce7;
     display: flex;
-    overflow: none;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
 .clear::after {
@@ -37,8 +36,7 @@
 }
 
 #rowWrapper {
-    width: 28%;
-    margin: 18px;
+    width: 30%;
     height: 433px;
     position: relative;
     float: left;
@@ -47,23 +45,19 @@
 #left {
     position: relative;
     float: left;
-/*    padding: 18px;*/
-    margin: 18px;
     height: 433px;
     border: 7px solid white;
     border-radius: 25px;
-    width: 25%;
+    width: 33%;
 }
 
 #right {
     position: relative;
     float: left;
-/*    padding: 18px;*/
-    margin: 18px;
     height: 433px;
     border: 7px solid white;
     border-radius: 25px;
-    width: 25%;
+    width: 33%;
 }
 
 #top {
